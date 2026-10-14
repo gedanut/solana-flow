@@ -2,6 +2,8 @@
 
 **Follow the balance.** A read-only Solana transaction analyzer by **gedanut**: analysis snapshots → exact net movement ledger → CSV, JSON and a self-contained offline HTML report.
 
+[![Verify Solana Flow](https://github.com/gedanut/solana-flow/actions/workflows/ci.yml/badge.svg)](https://github.com/gedanut/solana-flow/actions/workflows/ci.yml)
+
 Python 3.11+ · zero runtime dependencies · no keys, signing or wallet connection.
 
 ![Generated synthetic wallet movement report](docs/images/report.png)
@@ -89,6 +91,6 @@ for asset in ledger["assets"]:
 
 No report network requests, external fonts, trackers or CDNs. Explorer links are explicit user navigation. The HTML carries a restrictive content-security policy with hashes for its bundled script and stylesheet. Captured analysis snapshots retain only allowlisted balance evidence, never the configured RPC URL, provider extensions, instructions, logs or raw server error text. Both RPC and file JSON reject duplicate keys and non-finite constants. A supplied URL can still be visible in shell history/process arguments; use public endpoints for the CLI or construct `RPCClient` from application-managed configuration.
 
-[Development instructions](CONTRIBUTING.md), [security boundaries](SECURITY.md), [schema and methodology](docs/methodology.md), and [actual release checks and remaining environment limitations](docs/verification.md) are included. CI is configured for Python 3.11–3.14; no CI success is claimed before it runs.
+[Development instructions](CONTRIBUTING.md), [security boundaries](SECURITY.md), [schema and methodology](docs/methodology.md), and [actual release checks and remaining environment limitations](docs/verification.md) are included. CI passed on Python 3.11, 3.12, 3.13 and 3.14 for the first release implementation. See workflow history for current commit results.
 
 MIT licensed. Built as an auditable Python backend and data analytics portfolio project.

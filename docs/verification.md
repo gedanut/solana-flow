@@ -24,7 +24,7 @@ The live probe used a public devnet fee-payer address discovered from System Pro
 
 Coverage was capped at eight signatures and uses wallet-account-keys-only discovery. Successful capture does **not** mean complete wallet history. The public report remains a conspicuously **SYNTHETIC** offline example, never those live transactions.
 
-Hosted Python 3.11–3.14 CI is configured; consult the [exact workflow run](https://github.com/gedanut/solana-flow/actions/workflows/ci.yml) for current remote results. Local results alone do not prove every supported interpreter passed hosted CI. Mainnet RPC availability was not established by the release gate.
+Hosted verification **passed on Python 3.11, 3.12, 3.13 and 3.14** for implementation commit `558a0e34542c561590bcb10809c22aace4bf6ead`: [verified run](https://github.com/gedanut/solana-flow/actions/runs/38586616972). Every matrix job passed lint, branch coverage, build, wheel-install smoke and artifact upload. Consult [workflow history](https://github.com/gedanut/solana-flow/actions/workflows/ci.yml) for later commits. Mainnet RPC availability was not established by the release gate.
 
 ## Reproduce
 
