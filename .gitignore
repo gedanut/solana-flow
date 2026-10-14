@@ -1,0 +1,13 @@
+.venv/
+.release-venv/
+__pycache__/
+*.egg-info/
+.coverage
+htmlcov/
+.ruff_cache/
+build/
+dist/
+report-dir/
+.build-cache/
+.release-demo/
+.release-replay/

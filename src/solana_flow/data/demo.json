@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "wallet": "SyntheticWallet111111111111111111111111111111",
+  "cluster": "synthetic",
+  "captured_at": "2026-01-01T13:00:00Z",
+  "coverage": {
+    "limit": 12,
+    "pages": 1,
+    "cap_reached": true,
+    "reached_history": false,
+    "partial": false,
+    "discovery": "wallet-account-keys-only"
+  },
+  "transactions": [
+    {
+      "slot": 310000100,
+      "blockTime": 1767229200,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          2499995000,
+          7500000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": []
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-001-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000200,
+      "blockTime": 1767232800,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4574995000,
+          5425000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": []
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-002-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            {
+              "pubkey": "SyntheticWallet111111111111111111111111111111",
+              "signer": true,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticCounterparty11111111111111111111111",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountA",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountB",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            }
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000300,
+      "blockTime": 1767236400,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          0,
+          2039280
+        ],
+        "postBalances": [
+          4997955720,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "125000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-003-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000400,
+      "blockTime": 1767240000,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "125000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "86250000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-004-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            {
+              "pubkey": "SyntheticWallet111111111111111111111111111111",
+              "signer": true,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticCounterparty11111111111111111111111",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountA",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountB",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            }
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000500,
+      "blockTime": 1767243600,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "86250000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "50000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          },
+          {
+            "accountIndex": 3,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "36250000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-005-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000600,
+      "blockTime": 1767247200,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          0,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          4997960720,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "7500",
+              "decimals": 2,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-006-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            {
+              "pubkey": "SyntheticWallet111111111111111111111111111111",
+              "signer": true,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticCounterparty11111111111111111111111",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountA",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountB",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            }
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000700,
+      "blockTime": 1767250800,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "7500",
+              "decimals": 2,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "6300",
+              "decimals": 2,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-007-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000800,
+      "blockTime": 1767254400,
+      "version": "legacy",
+      "meta": {
+        "err": {
+          "InstructionError": [
+            0,
+            {
+              "Custom": 1
+            }
+          ]
+        },
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": []
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-008-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            {
+              "pubkey": "SyntheticWallet111111111111111111111111111111",
+              "signer": true,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticCounterparty11111111111111111111111",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountA",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountB",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            }
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310000900,
+      "blockTime": 1767258000,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          0
+        ],
+        "postBalances": [
+          5002034280,
+          4997960720,
+          0,
+          2039280
+        ],
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "36250000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 3,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticCounterparty11111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "36250000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-009-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310001000,
+      "blockTime": 1767261600,
+      "version": 0,
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          0,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          4997960720,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "20000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "loadedAddresses": {
+          "writable": [
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "readonly": []
+        }
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-010-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310001100,
+      "blockTime": 1767265200,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          0,
+          2039280
+        ],
+        "postBalances": [
+          4747955720,
+          5000000000,
+          252039280,
+          2039280
+        ],
+        "preTokenBalances": [],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "So11111111111111111111111111111111111111112",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "250000000",
+              "decimals": 9,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-011-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            "SyntheticWallet111111111111111111111111111111",
+            "SyntheticCounterparty11111111111111111111111",
+            "SyntheticTokenAccountA",
+            "SyntheticTokenAccountB"
+          ],
+          "instructions": []
+        }
+      }
+    },
+    {
+      "slot": 310001200,
+      "blockTime": null,
+      "version": "legacy",
+      "meta": {
+        "err": null,
+        "fee": 5000,
+        "preBalances": [
+          5000000000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "postBalances": [
+          4999995000,
+          5000000000,
+          2039280,
+          2039280
+        ],
+        "preTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticWallet111111111111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "20000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ],
+        "postTokenBalances": [
+          {
+            "accountIndex": 2,
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "owner": "SyntheticCounterparty11111111111111111111111",
+            "uiTokenAmount": {
+              "amount": "20000000",
+              "decimals": 6,
+              "uiAmount": null,
+              "uiAmountString": "unused"
+            }
+          }
+        ]
+      },
+      "transaction": {
+        "signatures": [
+          "SYNTHETIC-012-not-a-chain-signature"
+        ],
+        "message": {
+          "accountKeys": [
+            {
+              "pubkey": "SyntheticWallet111111111111111111111111111111",
+              "signer": true,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticCounterparty11111111111111111111111",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountA",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            },
+            {
+              "pubkey": "SyntheticTokenAccountB",
+              "signer": false,
+              "writable": true,
+              "source": "transaction"
+            }
+          ],
+          "instructions": []
+        }
+      }
+    }
+  ],
+  "unavailable_signatures": [],
+  "warnings": []
+}

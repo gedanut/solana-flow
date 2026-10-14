@@ -1,0 +1,6 @@
+include LICENSE README.md CONTRIBUTING.md SECURITY.md
+recursive-include src/solana_flow/assets *.css *.js
+recursive-include src/solana_flow/data *.json
+recursive-include tests *.py
+recursive-include scripts *.py *.cjs
+recursive-include docs *.md
