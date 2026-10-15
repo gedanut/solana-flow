@@ -23,3 +23,9 @@ python scripts/generate_fixture.py
 Fixtures are deterministic and synthetic. After fixture edits, regenerate the report and verify that the data, labels and expected counts match. Do not commit captured private wallet data, endpoint URLs with secrets, generated coverage/build output or environment-specific paths. Do not add remote report assets. See [methodology](docs/methodology.md) and [verification](docs/verification.md).
 
 A review should include the observed RED/GREEN result, relevant edge cases, export compatibility, coverage effects and any unverified behavior. Include public-safe examples only. Use the existing repository git identity when committing; never override it with an unrelated account.
+
+## Workbench and browser checks
+
+Node/Playwright are development-only. Run `npm ci`, `npm test`, `python scripts/generate_explorer.py`, `npx playwright install chromium`, then `npm run test:e2e`. Set `E2E_PYTHON=/path/to/python` when the harness should start a specific interpreter. Keep ports 8878/8879 free. The E2E suite creates disposable SQLite state and an explicitly local RPC fixture. It exercises actual HTTP import/query/compare/export and job workflows, not live private activity. `WORKBENCH_BROWSER_TESTS=1 node scripts/test_workbench.cjs` additionally tests browser precision and UI state against mocked routes.
+
+Generate the public explorer twice into separate directories and compare byte-for-byte. Never hand-edit totals. Protect database/WAL/lock files and user captures; `.gitignore` is not a secret scanner. Fresh distribution verification uses `python -I scripts/smoke_installed.py` with an isolated interpreter where the built wheel was installed without dependencies. It exercises packaged commands and starts the installed HTTP application, including HTML/JS/CSS resources.

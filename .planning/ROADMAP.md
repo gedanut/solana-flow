@@ -4,10 +4,19 @@
 - v1.0 Snapshot Analyzer: phases 1–3 shipped, archived in milestones/v1.0.
 - v2.0 Investigation Workbench: phases 4–7 active.
 
+## Progress
+
+| Phase | Plans Complete | Status | Completed |
+| --- | --- | --- | --- |
+| 4. Persistent workspace | 1/1 | Complete | 2026-10-14 |
+| 5. Expanded discovery | 1/1 | Complete | 2026-10-14 |
+| 6. Operational workbench | 1/1 | Complete | 2026-10-14 |
+| 7. Public proof and release | 0/1 | In progress | - |
+
 ## Phases
-- [ ] **Phase 4: Persistent workspace** - SQLite import, multi-wallet queries, exact analytics, capture comparisons.
-- [ ] **Phase 5: Expanded discovery** - Bounded classic SPL/Token-2022 multi-source capture.
-- [ ] **Phase 6: Operational workbench** - Durable jobs, secure loopback API, interactive application.
+- [x] **Phase 4: Persistent workspace** - SQLite import, multi-wallet queries, exact analytics, capture comparisons.
+- [x] **Phase 5: Expanded discovery** - Bounded classic SPL/Token-2022 multi-source capture.
+- [x] **Phase 6: Operational workbench** - Durable jobs, secure loopback API, interactive application.
 - [ ] **Phase 7: Public proof and release** - Static explorer, independent review, E2E, packaging, hosted CI, release.
 
 ### Phase 4: Persistent workspace

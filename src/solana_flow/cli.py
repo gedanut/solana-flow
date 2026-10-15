@@ -2,6 +2,8 @@
 
 import argparse
 import json
+import os
+import sqlite3
 import sys
 from importlib.resources import files
 from pathlib import Path
@@ -38,7 +40,7 @@ def _parser():
             "Read-only Solana net balance analytics. No signing, prices or payment classification."
         ),
     )
-    parser.add_argument("--version", action="version", version="solana-flow 1.0.0")
+    parser.add_argument("--version", action="version", version="solana-flow 2.0.0")
     sub = parser.add_subparsers(dest="command", required=True)
     demo = sub.add_parser("demo", help="Generate an offline SYNTHETIC demonstration")
     demo.add_argument("--output", type=Path, required=True, help="Report directory")
@@ -46,6 +48,11 @@ def _parser():
         "fetch", help="Capture wallet-address references (not complete history)"
     )
     capture.add_argument("address")
+    capture.add_argument(
+        "--include-tokens",
+        action="store_true",
+        help="Discover current classic SPL and Token-2022 account references",
+    )
     capture.add_argument("--rpc-url", required=True, help="HTTP(S) RPC endpoint; never persisted")
     capture.add_argument(
         "--limit", type=int, default=100, help="Signature cap, 1–10000 (default 100)"
@@ -60,16 +67,111 @@ def _parser():
     replay = sub.add_parser("analyze", help="Analyze a schema-v1 snapshot offline")
     replay.add_argument("snapshot", type=Path)
     replay.add_argument("--output", type=Path, required=True, help="Report directory")
+    ingest = sub.add_parser("import", help="Validate and atomically import a snapshot into SQLite")
+    ingest.add_argument("snapshot", type=Path)
+    ingest.add_argument("--label", default="", help="Capture label")
+    query = sub.add_parser(
+        "query", help="Query persistent movements; latest capture per wallet by default"
+    )
+    query.add_argument("--wallet-id", type=int)
+    query.add_argument("--capture-id", type=int)
+    query.add_argument("--asset", help="SOL or exact mint identifier")
+    query.add_argument("--direction", choices=("in", "out", "zero"))
+    query.add_argument("--status", choices=("success", "failed"))
+    query.add_argument("--search", default="")
+    query.add_argument("--limit", type=int, default=100)
+    query.add_argument("--offset", type=int, default=0)
+    compare = sub.add_parser("compare", help="Compare two immutable same-wallet captures")
+    compare.add_argument("before", type=int)
+    compare.add_argument("after", type=int)
+    serve = sub.add_parser("serve", help="Run the local-first investigation workbench on 127.0.0.1")
+    serve.add_argument("--port", type=int, default=8765)
+    serve.add_argument("--demo", action="store_true", help="Seed deterministic SYNTHETIC examples")
+    serve.add_argument(
+        "--rpc-url", help="Optional capture endpoint; prefer SOLANA_FLOW_RPC_URL env"
+    )
+    for command in (ingest, query, compare, serve):
+        command.add_argument(
+            "--database", type=Path, required=True, help="Persistent SQLite workspace filename"
+        )
     return parser
+
+
+def _workspace_command(args):
+    from .workspace import Workspace
+
+    workspace = Workspace(args.database)
+    if args.command == "import":
+        result = workspace.import_snapshot(load_snapshot(args.snapshot), label=args.label)
+        print(json.dumps(result, ensure_ascii=True, allow_nan=False))
+        return 2 if result["partial"] else 0
+    if args.command == "query":
+        filters = {
+            key: getattr(args, key)
+            for key in (
+                "wallet_id",
+                "capture_id",
+                "asset",
+                "direction",
+                "status",
+                "search",
+                "limit",
+                "offset",
+            )
+        }
+        print(json.dumps(workspace.movements(**filters), ensure_ascii=True, allow_nan=False))
+        return 0
+    if args.command == "compare":
+        print(
+            json.dumps(
+                workspace.compare_captures(args.before, args.after),
+                ensure_ascii=True,
+                allow_nan=False,
+            )
+        )
+        return 0
+    from .jobs import JobRunner
+    from .server import create_server
+
+    if args.demo:
+        from .samples import seed_workspace
+
+        seed_workspace(workspace)
+    runner = JobRunner(workspace, args.rpc_url or os.environ.get("SOLANA_FLOW_RPC_URL"))
+    http = None
+    try:
+        http = create_server(workspace, port=args.port, runner=runner)
+        print(f"Solana Flow workbench: http://127.0.0.1:{http.server_port}/", flush=True)
+        print(
+            "Local-only. Captures are scoped evidence, never complete wallet history.", flush=True
+        )
+        http.serve_forever(poll_interval=0.2)
+    finally:
+        if http is not None:
+            http.server_close()
+        runner.close(wait=False)
+    return 0
 
 
 def main(argv=None):
     args = _parser().parse_args(argv)
     try:
+        if args.command in ("import", "query", "compare", "serve"):
+            return _workspace_command(args)
         if args.command == "fetch":
-            snapshot = fetch(
-                args.address, RPCClient(args.rpc_url), limit=args.limit, cluster=args.cluster
-            )
+            client = RPCClient(args.rpc_url)
+            if args.include_tokens:
+                from .discovery import capture
+
+                snapshot = capture(
+                    args.address,
+                    client,
+                    limit=args.limit,
+                    cluster=args.cluster,
+                    include_tokens=True,
+                )
+            else:
+                snapshot = fetch(args.address, client, limit=args.limit, cluster=args.cluster)
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(
                 json.dumps(snapshot, ensure_ascii=True, allow_nan=False) + "\n", encoding="utf-8"
@@ -108,7 +210,7 @@ def main(argv=None):
     except (ValidationError, RPCError) as exc:
         print(f"solana-flow: {exc}", file=sys.stderr)
         return 1
-    except (OSError, UnicodeError):
+    except (OSError, UnicodeError, sqlite3.Error):
         print("solana-flow: unable to read or write the requested files.", file=sys.stderr)
         return 1
     except KeyboardInterrupt:

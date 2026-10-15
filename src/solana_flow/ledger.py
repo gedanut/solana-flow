@@ -103,7 +103,48 @@ def _analyze(snapshot):
     integer(coverage["pages"], "page count")
     for flag in ("cap_reached", "reached_history", "partial"):
         require(type(coverage[flag]) is bool, "Invalid coverage flag.")
-    require(coverage["discovery"] == "wallet-account-keys-only", "Invalid discovery scope.")
+    require(
+        coverage["discovery"] in ("wallet-account-keys-only", "wallet-and-current-token-accounts"),
+        "Invalid discovery scope.",
+    )
+    if coverage["discovery"] == "wallet-and-current-token-accounts":
+        # Local import avoids a module cycle: RPC reuses the ledger's validation helpers.
+        from .rpc import validate_address
+
+        validate_address(wallet)
+        accounts = coverage["token_accounts"]
+        sources = coverage["sources"]
+        require(isinstance(accounts, list) and len(accounts) <= 1000, "Invalid token accounts.")
+        for address in accounts:
+            validate_address(address)
+        require(
+            len(accounts) == len(set(accounts)) and wallet not in accounts,
+            "Duplicate discovery addresses.",
+        )
+        require(
+            isinstance(sources, list) and len(sources) == len(accounts) + 1,
+            "Invalid discovery sources.",
+        )
+        fields = {"address", "pages", "cap_reached", "reached_history", "partial"}
+        for source, address in zip(sources, [wallet] + accounts, strict=True):
+            require(isinstance(source, dict) and set(source) == fields, "Invalid discovery source.")
+            require(source["address"] == address, "Unexpected discovery source address.")
+            integer(source["pages"], "source page count")
+            for flag in ("cap_reached", "reached_history", "partial"):
+                require(type(source[flag]) is bool, "Invalid source coverage flag.")
+            require(
+                not source["cap_reached"]
+                or (coverage["cap_reached"] and not source["reached_history"]),
+                "Conflicting source coverage boundaries.",
+            )
+        require(
+            coverage["pages"] == sum(s["pages"] for s in sources),
+            "Source page counts do not match total.",
+        )
+        require(
+            not coverage["reached_history"] or all(s["reached_history"] for s in sources),
+            "Source history boundaries do not match total.",
+        )
     require(
         not (coverage["cap_reached"] and coverage["reached_history"]),
         "Conflicting coverage boundaries.",
@@ -140,6 +181,9 @@ def _analyze(snapshot):
             integer(block_time, "block time")
         meta = tx["meta"]
         if meta is None:
+            # A missing balance record is a gap, not permission for malformed
+            # transaction evidence to bypass the normalization prerequisites.
+            _keys(transaction, {})
             gaps.append({"signature": signature, "asset": "all", "reason": "Missing metadata"})
             continue
         require(isinstance(meta, dict), "Invalid transaction metadata.")

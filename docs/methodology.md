@@ -36,7 +36,7 @@ The CLI reads UTF-8 JSON up to 128 MiB. Duplicate JSON keys and non-finite JSON 
 | `coverage.cap_reached` | Capture stopped at cap |
 | `coverage.reached_history` | Provider returned an empty signature page |
 | `coverage.partial` | Transport, availability or analysis gaps; false never means complete wallet history |
-| `coverage.discovery` | Literal `wallet-account-keys-only` |
+| `coverage.discovery` | `wallet-account-keys-only` or `wallet-and-current-token-accounts`; see discovery extension below |
 | `transactions` | Allowlisted `getTransaction` analysis objects, not JSON-RPC envelopes or complete RPC archives |
 | `unavailable_signatures` | Discovered signatures without usable transaction results |
 | `warnings` | Safe diagnostic strings, never endpoint URLs or raw RPC error messages |
@@ -52,6 +52,14 @@ Each call defaults to a 20-second socket timeout, at most three retries after th
 The endpoint and server error text never enter diagnostics or capture metadata. A malicious provider can still lie or put sensitive text in allowlisted identifiers. Dropping logs and extensions reduces accidental disclosure; it does not authenticate provider data or make arbitrary snapshots safe to publish. Do not publish private snapshots without reviewing them. Reports intentionally expose the analyzed address, signatures and amounts. HTML escapes untrusted strings; CSV prefixes potentially formula-leading textual identifiers with an apostrophe. This changes those CSV identifiers; JSON is the lossless export. Spreadsheet auto-conversion of large numbers is outside CSV’s control: import numeric columns as text when precision matters.
 
 Provider responses are not cryptographic evidence. Captures are sequential rather than an atomic chain snapshot. Program parsing, historical token-account enumeration, forks beyond finalized provider claims, Token-2022 extension semantics (including withheld fees/confidential balances), fiat valuation and tax treatment are outside scope. Totals cover only attributable observed balances.
+
+## v2 current-account discovery and persistence
+
+Opt-in `--include-tokens` (or a token-enabled background job) enumerates current accounts from both classic SPL and Token-2022 programs with `getTokenAccountsByOwner`. It searches the wallet and bounded discovered addresses, deduplicates signature overlap globally, and retains per-source coverage. See [discovery](discovery.md) for traversal and bounds. This does not recover closed/transferred accounts or replace historical per-side owner metadata. Its scope warning makes the saved result partial even after clean page exhaustion.
+
+The extension adds `coverage.token_accounts` and `coverage.sources` with address, pages, cap/history/partial flags. These fields are validated, not trusted as proof of exhaustive history. The legacy wallet-only contract remains supported. Offline reports describe the actual selected discovery mode.
+
+Workspace imports normalize allowlisted evidence, reanalyze it and atomically persist immutable snapshots, derived ledgers and exact movement rows. Arbitrary input files are not rewritten; provider extensions are discarded from stored evidence. Latest means highest imported capture ID, not newest block time. Capture comparisons use normalized evidence, including unavailable observations. Different cluster assets are never combined by analytics. See [workspace](workspace.md) and [API](api.md).
 
 ## Primary protocol references
 

@@ -1,0 +1,11 @@
+{
+  "kind": "browser-screenshot",
+  "source": "Solana Flow v2 local workbench seeded with sample_snapshots()",
+  "synthetic": true,
+  "viewport": {
+    "width": 1440,
+    "height": 1400
+  },
+  "state": "Latest synthetic treasury capture; first movement selected in evidence inspector",
+  "transforms": "None"
+}

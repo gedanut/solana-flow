@@ -1,0 +1,3143 @@
+{
+  "captures": [
+    {
+      "captured_at": "2026-01-05T13:00:00Z",
+      "fingerprint": "3fc4be57387af3b564f7adbf6e600f80df350d29e29017267bc009380888b0db",
+      "id": 4,
+      "imported_at": "2026-01-05T13:00:00Z",
+      "label": "Synthetic operations \u00b7 follow-up",
+      "ledger": {
+        "assets": [
+          {
+            "asset": "SOL",
+            "decimals": 9,
+            "inflow": "0.000000000",
+            "inflow_base_units": "0",
+            "mint": null,
+            "net": "-0.254123560",
+            "net_base_units": "-254123560",
+            "outflow": "0.254123560",
+            "outflow_base_units": "254123560"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 6,
+            "inflow": "125.000000",
+            "inflow_base_units": "125000000",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "net": "65.250000",
+            "net_base_units": "65250000",
+            "outflow": "59.750000",
+            "outflow_base_units": "59750000"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 2,
+            "inflow": "75.00",
+            "inflow_base_units": "7500",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "net": "63.00",
+            "net_base_units": "6300",
+            "outflow": "12.00",
+            "outflow_base_units": "1200"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 9,
+            "inflow": "0.250000000",
+            "inflow_base_units": "250000000",
+            "mint": "So11111111111111111111111111111111111111112",
+            "net": "0.250000000",
+            "net_base_units": "250000000",
+            "outflow": "0.000000000",
+            "outflow_base_units": "0"
+          }
+        ],
+        "captured_at": "2026-01-05T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 16,
+          "pages": 1,
+          "partial": true,
+          "reached_history": false
+        },
+        "failed_count": 1,
+        "gaps": [
+          {
+            "asset": "all",
+            "reason": "Missing metadata",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-009-not-a-chain-signature"
+          },
+          {
+            "asset": "SyntheticMintA1111111111111111111111111111111",
+            "reason": "Unknown token owner; mint movement omitted",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-010-not-a-chain-signature"
+          }
+        ],
+        "rows": [
+          {
+            "amount_base_units": "-2044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.002044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767322800,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "125000000",
+            "asset": "SPL",
+            "decimal_amount": "125.000000",
+            "decimals": 6,
+            "direction": "in",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767322800,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767326400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-39750000",
+            "asset": "SPL",
+            "decimal_amount": "-39.750000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767326400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767416400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "0",
+            "asset": "SPL",
+            "decimal_amount": "0.000000",
+            "decimals": 6,
+            "direction": "zero",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767416400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767420000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "7500",
+            "asset": "SPL",
+            "decimal_amount": "75.00",
+            "decimals": 2,
+            "direction": "in",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767420000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767423600,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-1200",
+            "asset": "SPL",
+            "decimal_amount": "-12.00",
+            "decimals": 2,
+            "direction": "out",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767423600,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-008-not-a-chain-signature",
+            "slot": 310000800,
+            "status": "failed",
+            "synthetic": true,
+            "time": 1767427200,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-010-not-a-chain-signature",
+            "slot": 310001000,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767520800,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-252044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.252044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-011-not-a-chain-signature",
+            "slot": 310001100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767524400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "250000000",
+            "asset": "SPL",
+            "decimal_amount": "0.250000000",
+            "decimals": 9,
+            "direction": "in",
+            "mint": "So11111111111111111111111111111111111111112",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-011-not-a-chain-signature",
+            "slot": 310001100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767524400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-012-not-a-chain-signature",
+            "slot": 310001200,
+            "status": "success",
+            "synthetic": true,
+            "time": null,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-20000000",
+            "asset": "SPL",
+            "decimal_amount": "-20.000000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-012-not-a-chain-signature",
+            "slot": 310001200,
+            "status": "success",
+            "synthetic": true,
+            "time": null,
+            "wallet_paid_fee_base_units": ""
+          }
+        ],
+        "schema_version": 1,
+        "synthetic": true,
+        "transaction_count": 10,
+        "unavailable_signatures": [
+          "SYNTHETIC-W2-unavailable-not-a-chain-signature"
+        ],
+        "unknown_status_count": 1,
+        "wallet": "Vote111111111111111111111111111111111111111",
+        "wallet_paid_fees_base_units": "45000",
+        "wallet_paid_fees_sol": "0.000045000",
+        "warnings": [
+          "Synthetic overlapping windows, not an incremental balance history.",
+          "Synthetic correction: transaction 004 token evidence differs from baseline.",
+          "Missing metadata and owner demonstrate uncertainty, not zero movement."
+        ]
+      },
+      "partial": true,
+      "row_count": 16,
+      "snapshot": {
+        "captured_at": "2026-01-05T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 16,
+          "pages": 1,
+          "partial": true,
+          "reached_history": false
+        },
+        "schema_version": 1,
+        "synthetic": true,
+        "transactions": [
+          {
+            "blockTime": 1767322800,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4997955720,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000300,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767326400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "85250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000400,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767416400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "50000000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "36250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "0",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000500,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767420000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000600,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767423600,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "6300",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ]
+            },
+            "slot": 310000700,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767427200,
+            "meta": {
+              "err": {
+                "failed": true
+              },
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000800,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-008-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767517200,
+            "meta": null,
+            "slot": 310000900,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-009-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767520800,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "loadedAddresses": {
+                "readonly": [],
+                "writable": [
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310001000,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-010-not-a-chain-signature"
+              ]
+            },
+            "version": 0
+          },
+          {
+            "blockTime": 1767524400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4747955720,
+                5000000000,
+                252039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "So11111111111111111111111111111111111111112",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "250000000",
+                    "decimals": 9
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310001100,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-011-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": null,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "SyntheticCounterparty11111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310001200,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-012-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          }
+        ],
+        "unavailable_signatures": [
+          "SYNTHETIC-W2-unavailable-not-a-chain-signature"
+        ],
+        "wallet": "Vote111111111111111111111111111111111111111",
+        "warnings": [
+          "Synthetic overlapping windows, not an incremental balance history.",
+          "Synthetic correction: transaction 004 token evidence differs from baseline.",
+          "Missing metadata and owner demonstrate uncertainty, not zero movement."
+        ]
+      },
+      "synthetic": true,
+      "transaction_count": 10,
+      "wallet_id": 2
+    },
+    {
+      "captured_at": "2026-01-04T13:00:00Z",
+      "fingerprint": "c6e81ad287d33b2bf3ed7fdf3a7fb6a49bf1d6d8df81225684c246fed4e6f836",
+      "id": 3,
+      "imported_at": "2026-01-04T13:00:00Z",
+      "label": "Synthetic operations \u00b7 baseline",
+      "ledger": {
+        "assets": [
+          {
+            "asset": "SOL",
+            "decimals": 9,
+            "inflow": "2.500000000",
+            "inflow_base_units": "2500000000",
+            "mint": null,
+            "net": "2.072925720",
+            "net_base_units": "2072925720",
+            "outflow": "0.427074280",
+            "outflow_base_units": "427074280"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 6,
+            "inflow": "125.000000",
+            "inflow_base_units": "125000000",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "net": "86.250000",
+            "net_base_units": "86250000",
+            "outflow": "38.750000",
+            "outflow_base_units": "38750000"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 2,
+            "inflow": "75.00",
+            "inflow_base_units": "7500",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "net": "63.00",
+            "net_base_units": "6300",
+            "outflow": "12.00",
+            "outflow_base_units": "1200"
+          }
+        ],
+        "captured_at": "2026-01-04T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 12,
+          "pages": 1,
+          "partial": false,
+          "reached_history": false
+        },
+        "failed_count": 1,
+        "gaps": [],
+        "rows": [
+          {
+            "amount_base_units": "2500000000",
+            "asset": "SOL",
+            "decimal_amount": "2.500000000",
+            "decimals": 9,
+            "direction": "in",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-001-not-a-chain-signature",
+            "slot": 310000100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767315600,
+            "wallet_paid_fee_base_units": "0"
+          },
+          {
+            "amount_base_units": "-425005000",
+            "asset": "SOL",
+            "decimal_amount": "-0.425005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-002-not-a-chain-signature",
+            "slot": 310000200,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767319200,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-2044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.002044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767322800,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "125000000",
+            "asset": "SPL",
+            "decimal_amount": "125.000000",
+            "decimals": 6,
+            "direction": "in",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767322800,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767326400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-38750000",
+            "asset": "SPL",
+            "decimal_amount": "-38.750000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767326400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767416400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "0",
+            "asset": "SPL",
+            "decimal_amount": "0.000000",
+            "decimals": 6,
+            "direction": "zero",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767416400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767420000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "7500",
+            "asset": "SPL",
+            "decimal_amount": "75.00",
+            "decimals": 2,
+            "direction": "in",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767420000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767423600,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-1200",
+            "asset": "SPL",
+            "decimal_amount": "-12.00",
+            "decimals": 2,
+            "direction": "out",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767423600,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W2-SYNTHETIC-008-not-a-chain-signature",
+            "slot": 310000800,
+            "status": "failed",
+            "synthetic": true,
+            "time": 1767427200,
+            "wallet_paid_fee_base_units": "5000"
+          }
+        ],
+        "schema_version": 1,
+        "synthetic": true,
+        "transaction_count": 8,
+        "unavailable_signatures": [],
+        "unknown_status_count": 0,
+        "wallet": "Vote111111111111111111111111111111111111111",
+        "wallet_paid_fees_base_units": "35000",
+        "wallet_paid_fees_sol": "0.000035000",
+        "warnings": []
+      },
+      "partial": false,
+      "row_count": 13,
+      "snapshot": {
+        "captured_at": "2026-01-04T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 12,
+          "pages": 1,
+          "partial": false,
+          "reached_history": false
+        },
+        "schema_version": 1,
+        "synthetic": true,
+        "transactions": [
+          {
+            "blockTime": 1767315600,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                2499995000,
+                7500000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000100,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "SyntheticCounterparty11111111111111111111111",
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-001-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767319200,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4574995000,
+                5425000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000200,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-002-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767322800,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4997955720,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000300,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-003-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767326400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000400,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-004-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767416400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "50000000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "36250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "0",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000500,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-005-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767420000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000600,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-006-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767423600,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "6300",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "Vote111111111111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ]
+            },
+            "slot": 310000700,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "Vote111111111111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-007-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767427200,
+            "meta": {
+              "err": {
+                "failed": true
+              },
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000800,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "Vote111111111111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W2-SYNTHETIC-008-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          }
+        ],
+        "unavailable_signatures": [],
+        "wallet": "Vote111111111111111111111111111111111111111",
+        "warnings": []
+      },
+      "synthetic": true,
+      "transaction_count": 8,
+      "wallet_id": 2
+    },
+    {
+      "captured_at": "2026-01-05T13:00:00Z",
+      "fingerprint": "354ecb28f5d88faf44b40298a91c71e2091e246ff51e7a5ea96617ff8620e796",
+      "id": 2,
+      "imported_at": "2026-01-05T13:00:00Z",
+      "label": "Synthetic treasury \u00b7 follow-up",
+      "ledger": {
+        "assets": [
+          {
+            "asset": "SOL",
+            "decimals": 9,
+            "inflow": "0.000000000",
+            "inflow_base_units": "0",
+            "mint": null,
+            "net": "-0.254123560",
+            "net_base_units": "-254123560",
+            "outflow": "0.254123560",
+            "outflow_base_units": "254123560"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 6,
+            "inflow": "125.000000",
+            "inflow_base_units": "125000000",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "net": "65.250000",
+            "net_base_units": "65250000",
+            "outflow": "59.750000",
+            "outflow_base_units": "59750000"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 2,
+            "inflow": "75.00",
+            "inflow_base_units": "7500",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "net": "63.00",
+            "net_base_units": "6300",
+            "outflow": "12.00",
+            "outflow_base_units": "1200"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 9,
+            "inflow": "0.250000000",
+            "inflow_base_units": "250000000",
+            "mint": "So11111111111111111111111111111111111111112",
+            "net": "0.250000000",
+            "net_base_units": "250000000",
+            "outflow": "0.000000000",
+            "outflow_base_units": "0"
+          }
+        ],
+        "captured_at": "2026-01-05T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 16,
+          "pages": 1,
+          "partial": true,
+          "reached_history": false
+        },
+        "failed_count": 1,
+        "gaps": [
+          {
+            "asset": "all",
+            "reason": "Missing metadata",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-009-not-a-chain-signature"
+          },
+          {
+            "asset": "SyntheticMintA1111111111111111111111111111111",
+            "reason": "Unknown token owner; mint movement omitted",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-010-not-a-chain-signature"
+          }
+        ],
+        "rows": [
+          {
+            "amount_base_units": "-2044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.002044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767236400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "125000000",
+            "asset": "SPL",
+            "decimal_amount": "125.000000",
+            "decimals": 6,
+            "direction": "in",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767236400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767240000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-39750000",
+            "asset": "SPL",
+            "decimal_amount": "-39.750000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767240000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767330000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "0",
+            "asset": "SPL",
+            "decimal_amount": "0.000000",
+            "decimals": 6,
+            "direction": "zero",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767330000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767333600,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "7500",
+            "asset": "SPL",
+            "decimal_amount": "75.00",
+            "decimals": 2,
+            "direction": "in",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767333600,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767337200,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-1200",
+            "asset": "SPL",
+            "decimal_amount": "-12.00",
+            "decimals": 2,
+            "direction": "out",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767337200,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-008-not-a-chain-signature",
+            "slot": 310000800,
+            "status": "failed",
+            "synthetic": true,
+            "time": 1767340800,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-010-not-a-chain-signature",
+            "slot": 310001000,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767434400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-252044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.252044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-011-not-a-chain-signature",
+            "slot": 310001100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767438000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "250000000",
+            "asset": "SPL",
+            "decimal_amount": "0.250000000",
+            "decimals": 9,
+            "direction": "in",
+            "mint": "So11111111111111111111111111111111111111112",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-011-not-a-chain-signature",
+            "slot": 310001100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767438000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-012-not-a-chain-signature",
+            "slot": 310001200,
+            "status": "success",
+            "synthetic": true,
+            "time": null,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-20000000",
+            "asset": "SPL",
+            "decimal_amount": "-20.000000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-012-not-a-chain-signature",
+            "slot": 310001200,
+            "status": "success",
+            "synthetic": true,
+            "time": null,
+            "wallet_paid_fee_base_units": ""
+          }
+        ],
+        "schema_version": 1,
+        "synthetic": true,
+        "transaction_count": 10,
+        "unavailable_signatures": [
+          "SYNTHETIC-W1-unavailable-not-a-chain-signature"
+        ],
+        "unknown_status_count": 1,
+        "wallet": "11111111111111111111111111111111",
+        "wallet_paid_fees_base_units": "45000",
+        "wallet_paid_fees_sol": "0.000045000",
+        "warnings": [
+          "Synthetic overlapping windows, not an incremental balance history.",
+          "Synthetic correction: transaction 004 token evidence differs from baseline.",
+          "Missing metadata and owner demonstrate uncertainty, not zero movement."
+        ]
+      },
+      "partial": true,
+      "row_count": 16,
+      "snapshot": {
+        "captured_at": "2026-01-05T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 16,
+          "pages": 1,
+          "partial": true,
+          "reached_history": false
+        },
+        "schema_version": 1,
+        "synthetic": true,
+        "transactions": [
+          {
+            "blockTime": 1767236400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4997955720,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000300,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767240000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "85250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000400,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767330000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "50000000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "36250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "0",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000500,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767333600,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000600,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767337200,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "6300",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ]
+            },
+            "slot": 310000700,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767340800,
+            "meta": {
+              "err": {
+                "failed": true
+              },
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000800,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-008-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767430800,
+            "meta": null,
+            "slot": 310000900,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-009-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767434400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "loadedAddresses": {
+                "readonly": [],
+                "writable": [
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310001000,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-010-not-a-chain-signature"
+              ]
+            },
+            "version": 0
+          },
+          {
+            "blockTime": 1767438000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4747955720,
+                5000000000,
+                252039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "So11111111111111111111111111111111111111112",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "250000000",
+                    "decimals": 9
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310001100,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-011-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": null,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "SyntheticCounterparty11111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "20000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310001200,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-012-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          }
+        ],
+        "unavailable_signatures": [
+          "SYNTHETIC-W1-unavailable-not-a-chain-signature"
+        ],
+        "wallet": "11111111111111111111111111111111",
+        "warnings": [
+          "Synthetic overlapping windows, not an incremental balance history.",
+          "Synthetic correction: transaction 004 token evidence differs from baseline.",
+          "Missing metadata and owner demonstrate uncertainty, not zero movement."
+        ]
+      },
+      "synthetic": true,
+      "transaction_count": 10,
+      "wallet_id": 1
+    },
+    {
+      "captured_at": "2026-01-04T13:00:00Z",
+      "fingerprint": "6bfb544dacc931725d964704085d10932125be091f287a4ce08b255af774feef",
+      "id": 1,
+      "imported_at": "2026-01-04T13:00:00Z",
+      "label": "Synthetic treasury \u00b7 baseline",
+      "ledger": {
+        "assets": [
+          {
+            "asset": "SOL",
+            "decimals": 9,
+            "inflow": "2.500000000",
+            "inflow_base_units": "2500000000",
+            "mint": null,
+            "net": "2.072925720",
+            "net_base_units": "2072925720",
+            "outflow": "0.427074280",
+            "outflow_base_units": "427074280"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 6,
+            "inflow": "125.000000",
+            "inflow_base_units": "125000000",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "net": "86.250000",
+            "net_base_units": "86250000",
+            "outflow": "38.750000",
+            "outflow_base_units": "38750000"
+          },
+          {
+            "asset": "SPL",
+            "decimals": 2,
+            "inflow": "75.00",
+            "inflow_base_units": "7500",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "net": "63.00",
+            "net_base_units": "6300",
+            "outflow": "12.00",
+            "outflow_base_units": "1200"
+          }
+        ],
+        "captured_at": "2026-01-04T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 12,
+          "pages": 1,
+          "partial": false,
+          "reached_history": false
+        },
+        "failed_count": 1,
+        "gaps": [],
+        "rows": [
+          {
+            "amount_base_units": "2500000000",
+            "asset": "SOL",
+            "decimal_amount": "2.500000000",
+            "decimals": 9,
+            "direction": "in",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-001-not-a-chain-signature",
+            "slot": 310000100,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767229200,
+            "wallet_paid_fee_base_units": "0"
+          },
+          {
+            "amount_base_units": "-425005000",
+            "asset": "SOL",
+            "decimal_amount": "-0.425005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-002-not-a-chain-signature",
+            "slot": 310000200,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767232800,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-2044280",
+            "asset": "SOL",
+            "decimal_amount": "-0.002044280",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767236400,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "125000000",
+            "asset": "SPL",
+            "decimal_amount": "125.000000",
+            "decimals": 6,
+            "direction": "in",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature",
+            "slot": 310000300,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767236400,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767240000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-38750000",
+            "asset": "SPL",
+            "decimal_amount": "-38.750000",
+            "decimals": 6,
+            "direction": "out",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature",
+            "slot": 310000400,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767240000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767330000,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "0",
+            "asset": "SPL",
+            "decimal_amount": "0.000000",
+            "decimals": 6,
+            "direction": "zero",
+            "mint": "SyntheticMintA1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature",
+            "slot": 310000500,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767330000,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767333600,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "7500",
+            "asset": "SPL",
+            "decimal_amount": "75.00",
+            "decimals": 2,
+            "direction": "in",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature",
+            "slot": 310000600,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767333600,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767337200,
+            "wallet_paid_fee_base_units": "5000"
+          },
+          {
+            "amount_base_units": "-1200",
+            "asset": "SPL",
+            "decimal_amount": "-12.00",
+            "decimals": 2,
+            "direction": "out",
+            "mint": "SyntheticMintB1111111111111111111111111111111",
+            "signature": "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature",
+            "slot": 310000700,
+            "status": "success",
+            "synthetic": true,
+            "time": 1767337200,
+            "wallet_paid_fee_base_units": ""
+          },
+          {
+            "amount_base_units": "-5000",
+            "asset": "SOL",
+            "decimal_amount": "-0.000005000",
+            "decimals": 9,
+            "direction": "out",
+            "mint": null,
+            "signature": "SYNTHETIC-W1-SYNTHETIC-008-not-a-chain-signature",
+            "slot": 310000800,
+            "status": "failed",
+            "synthetic": true,
+            "time": 1767340800,
+            "wallet_paid_fee_base_units": "5000"
+          }
+        ],
+        "schema_version": 1,
+        "synthetic": true,
+        "transaction_count": 8,
+        "unavailable_signatures": [],
+        "unknown_status_count": 0,
+        "wallet": "11111111111111111111111111111111",
+        "wallet_paid_fees_base_units": "35000",
+        "wallet_paid_fees_sol": "0.000035000",
+        "warnings": []
+      },
+      "partial": false,
+      "row_count": 13,
+      "snapshot": {
+        "captured_at": "2026-01-04T13:00:00Z",
+        "cluster": "synthetic",
+        "coverage": {
+          "cap_reached": true,
+          "discovery": "wallet-account-keys-only",
+          "limit": 12,
+          "pages": 1,
+          "partial": false,
+          "reached_history": false
+        },
+        "schema_version": 1,
+        "synthetic": true,
+        "transactions": [
+          {
+            "blockTime": 1767229200,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                2499995000,
+                7500000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000100,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "SyntheticCounterparty11111111111111111111111",
+                  "11111111111111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-001-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767232800,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4574995000,
+                5425000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000200,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-002-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767236400,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4997955720,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000300,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-003-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767240000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "125000000",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000400,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-004-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767330000,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "50000000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "36250000",
+                    "decimals": 6
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "86250000",
+                    "decimals": 6
+                  }
+                },
+                {
+                  "accountIndex": 3,
+                  "mint": "SyntheticMintA1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "0",
+                    "decimals": 6
+                  }
+                }
+              ]
+            },
+            "slot": 310000500,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-005-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767333600,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                4997960720,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                0,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000600,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-006-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767337200,
+            "meta": {
+              "err": null,
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "6300",
+                    "decimals": 2
+                  }
+                }
+              ],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": [
+                {
+                  "accountIndex": 2,
+                  "mint": "SyntheticMintB1111111111111111111111111111111",
+                  "owner": "11111111111111111111111111111111",
+                  "uiTokenAmount": {
+                    "amount": "7500",
+                    "decimals": 2
+                  }
+                }
+              ]
+            },
+            "slot": 310000700,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  "11111111111111111111111111111111",
+                  "SyntheticCounterparty11111111111111111111111",
+                  "SyntheticTokenAccountA",
+                  "SyntheticTokenAccountB"
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-007-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          },
+          {
+            "blockTime": 1767340800,
+            "meta": {
+              "err": {
+                "failed": true
+              },
+              "fee": 5000,
+              "postBalances": [
+                4999995000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "postTokenBalances": [],
+              "preBalances": [
+                5000000000,
+                5000000000,
+                2039280,
+                2039280
+              ],
+              "preTokenBalances": []
+            },
+            "slot": 310000800,
+            "transaction": {
+              "message": {
+                "accountKeys": [
+                  {
+                    "pubkey": "11111111111111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticCounterparty11111111111111111111111"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountA"
+                  },
+                  {
+                    "pubkey": "SyntheticTokenAccountB"
+                  }
+                ]
+              },
+              "signatures": [
+                "SYNTHETIC-W1-SYNTHETIC-008-not-a-chain-signature"
+              ]
+            },
+            "version": "legacy"
+          }
+        ],
+        "unavailable_signatures": [],
+        "wallet": "11111111111111111111111111111111",
+        "warnings": []
+      },
+      "synthetic": true,
+      "transaction_count": 8,
+      "wallet_id": 1
+    }
+  ],
+  "jobs": [],
+  "wallets": [
+    {
+      "address": "11111111111111111111111111111111",
+      "cluster": "synthetic",
+      "created_at": "2026-01-04T13:00:00Z",
+      "id": 1,
+      "label": "Synthetic treasury"
+    },
+    {
+      "address": "Vote111111111111111111111111111111111111111",
+      "cluster": "synthetic",
+      "created_at": "2026-01-04T13:00:00Z",
+      "id": 2,
+      "label": "Synthetic operations"
+    }
+  ]
+}

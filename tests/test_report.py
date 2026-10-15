@@ -11,6 +11,19 @@ from solana_flow.report import csv_text, write_report
 
 
 class ReportTests(unittest.TestCase):
+    def test_token_discovery_report_describes_actual_scope(self):
+        from test_discovery import TokenRPC
+
+        from solana_flow.discovery import capture
+        from solana_flow.ledger import analyze
+        from solana_flow.report import html_text
+
+        html = html_text(
+            analyze(capture("11111111111111111111111111111111", TokenRPC(), include_tokens=True))
+        )
+        self.assertIn("currently owned token accounts", html)
+        self.assertNotIn("supplied wallet in account keys only", html)
+
     def test_escape_formula_and_no_synthetic_links(self):
         t = tx('=HYPERLINK("evil")')
         t["meta"]["postTokenBalances"] = [token(mint="<script>alert(1)</script>")]

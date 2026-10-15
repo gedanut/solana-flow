@@ -71,7 +71,7 @@ class RPCClient:
 
     def call(self, method, params):
         require(
-            method in ("getSignaturesForAddress", "getTransaction"),
+            method in ("getSignaturesForAddress", "getTransaction", "getTokenAccountsByOwner"),
             "Only read-only history methods are supported.",
         )
         body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()

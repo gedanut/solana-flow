@@ -130,6 +130,14 @@ def html_text(result: dict) -> str:
         if cov["reached_history"]
         else "History boundary was not established."
     )
+    discovery_text = (
+        "Discovery includes wallet references and currently owned token accounts. "
+        "Closed or transferred token accounts and prior ownership history may be absent. "
+        "This is <b>not complete wallet history</b>."
+        if cov["discovery"] == "wallet-and-current-token-accounts"
+        else "Discovery includes transactions referencing the supplied wallet in account keys only.\n"
+        "Passive receipts into owned token accounts may be absent. This is <b>not complete wallet history</b>."
+    )
     gaps = result["gaps"]
     issues = [
         *result["warnings"],
@@ -172,8 +180,7 @@ Coverage limits stay visible alongside the amounts.</p></div>
 <div class="actions"><a class="button primary" download="ledger.csv" href="data:text/csv;base64,{csv_data}">Download CSV</a>
 <a class="button" href="ledger.json" download>Ledger JSON</a></div></section>
 <section class="coverage" aria-label="Coverage limitations"><strong>{prefix}{coverage_title}</strong>
-<p>Discovery includes transactions referencing the supplied wallet in account keys only.
-Passive receipts into owned token accounts may be absent. This is <b>not complete wallet history</b>.</p>
+<p>{discovery_text}</p>
 <p>{boundary} Limit: {cov["limit"]} signatures. Pages: {cov["pages"]}.
 Unavailable: {len(result["unavailable_signatures"])}. Analysis gaps: {len(gaps)}.</p>
 {("<p><b>SYNTHETIC: invented fixture transactions, not live activity. No explorer links.</b></p>" if synthetic else "")}

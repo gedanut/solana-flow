@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solana Flow local investigation workbench. Inspect exact balance evidence, compare captures, and export scoped ledgers.">
+  <meta name="referrer" content="no-referrer">
+  <title>Investigation workbench · Solana Flow</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="workbench.css">
+  <script src="workbench.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to investigation</a>
+<div class="shell">
+  <aside class="rail" aria-label="Workspace">
+    <div class="brand">Solana Flow <span>Investigation workbench</span></div>
+    <div class="rail-status" id="mode-label">Connecting to workspace…</div>
+    <button class="rail-toggle" id="rail-toggle" aria-expanded="false" aria-controls="wallet-panel">Show wallets</button>
+    <div id="wallet-panel">
+      <div class="rail-heading"><h2>Wallets</h2><button id="refresh-wallets" class="quiet">Refresh</button></div>
+      <nav id="wallet-list" aria-label="Select wallet"><p>Loading wallets…</p></nav>
+      <details class="register"><summary>Register wallet</summary>
+        <form id="wallet-form">
+          <fieldset id="wallet-fields" disabled>
+            <label for="wallet-address">Wallet address</label><input id="wallet-address" name="address" required autocomplete="off" maxlength="64" spellcheck="false">
+            <label for="wallet-label">Label (optional)</label><input id="wallet-label" name="label" maxlength="256">
+            <label for="wallet-cluster">Cluster</label><select id="wallet-cluster" name="cluster"><option value="mainnet-beta">Mainnet beta</option><option value="devnet">Devnet</option><option value="testnet">Testnet</option><option value="custom">Custom</option></select>
+            <button id="register-submit" class="primary" type="submit">Register wallet</button>
+          </fieldset>
+          <p id="wallet-feedback" class="feedback" role="status"></p>
+        </form>
+      </details>
+    </div>
+    <div class="rail-footer"><p>No signing. No private keys.<br>Observed balances, not payment intent.</p><a href="https://github.com/gedanut/solana-flow">Repository</a><a href="https://github.com/gedanut/solana-flow/blob/main/docs/methodology.md">Methodology &amp; limits</a></div>
+  </aside>
+  <main id="main" tabindex="-1">
+    <header class="topbar"><div><h1>Investigation</h1><p id="wallet-context">Select a wallet to inspect its captures.</p></div><button id="retry" hidden>Retry connection</button></header>
+    <div id="global-status" role="status" class="global-status">Loading workspace…</div>
+    <section id="static-notice" class="notice" hidden><strong>Read-only demonstration</strong><p>Imports, wallet registration and live capture are disabled here. Run <code>solana-flow serve</code> locally to use your own evidence. RPC configuration stays on the server.</p></section>
+    <section class="capture-bar" aria-label="Capture selection and export">
+      <div class="capture-picker"><label for="capture-select">Evidence capture</label><select id="capture-select" disabled><option value="">No capture selected</option></select><p id="capture-context" class="muted">Select a wallet first.</p></div>
+      <div class="export-actions"><span>Export full capture</span><button id="export-csv" disabled>CSV</button><button id="export-json" disabled>JSON</button></div>
+    </section>
+    <div id="provenance" class="notice" hidden></div>
+    <section aria-labelledby="overview-heading" class="overview"><h2 id="overview-heading">Capture overview</h2><p class="muted">All observed movements in this capture. Filters below do not change these totals. Net changes are not current balances.</p><dl id="capture-stats" class="facts"></dl>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Per-asset totals"><table><caption>Exact amounts by asset</caption><thead><tr><th scope="col">Asset / mint</th><th scope="col" class="numeric">Inflow</th><th scope="col" class="numeric">Outflow</th><th scope="col" class="numeric">Net change</th></tr></thead><tbody id="asset-totals"></tbody></table></div>
+      <details class="coverage-details"><summary>Coverage, daily activity &amp; warnings</summary><div id="coverage-content"></div><div id="daily-content"></div></details>
+    </section>
+    <section class="ledger-section" aria-labelledby="ledger-heading">
+      <div class="section-title"><h2 id="ledger-heading">Movement ledger</h2><span id="row-count" role="status">No capture selected</span></div>
+      <form id="filter-form" class="filters" role="search" aria-label="Filter movements">
+        <div class="search-field"><label for="search">Search signature or mint / asset</label><input id="search" type="search" placeholder="Search evidence…" autocomplete="off" maxlength="256"></div>
+        <div><label for="asset-filter">Asset</label><select id="asset-filter"><option value="">All assets</option></select></div>
+        <div><label for="direction-filter">Direction</label><select id="direction-filter"><option value="">All directions</option><option value="in">Inflow</option><option value="out">Outflow</option><option value="zero">No change</option></select></div>
+        <div><label for="status-filter">Status</label><select id="status-filter"><option value="">All statuses</option><option value="success">Success</option><option value="failed">Failed</option></select></div>
+        <button id="reset-filters" type="button">Reset filters</button>
+      </form>
+      <div class="investigation-grid"><div class="ledger-pane">
+        <div class="table-scroll ledger-scroll" tabindex="0" role="region" aria-label="Movement ledger, horizontally scrollable"><table id="ledger-table"><caption class="sr-only">Observed net balance movements. Select a signature to inspect source evidence.</caption><thead><tr><th scope="col">Time (UTC) / signature</th><th scope="col">Asset</th><th scope="col" class="numeric">Net amount</th><th scope="col">Direction / status</th></tr></thead><tbody id="ledger-rows"></tbody></table></div>
+        <p id="ledger-message" class="empty">Select a capture to inspect movements.</p>
+        <div class="pagination"><button id="previous-page" disabled>Previous</button><span id="page-context">Page 0 of 0</span><button id="next-page" disabled>Next</button><label for="page-size">Rows</label><select id="page-size"><option value="25">25</option><option value="50" selected>50</option><option value="100">100</option></select></div>
+      </div><aside class="inspector" aria-labelledby="inspector-heading"><h3 id="inspector-heading" tabindex="-1">Evidence inspector</h3><p id="inspector-help">Choose a signature in the ledger. Source account keys, pre/post balances and transaction metadata appear here.</p><dl id="movement-detail"></dl><pre id="evidence-json" tabindex="0" aria-label="Selected transaction source evidence" hidden></pre></aside></div>
+    </section>
+    <section class="comparison" aria-labelledby="compare-heading"><h2 id="compare-heading">Compare captures</h2><p class="muted">Compare two captures of this wallet. Added or missing evidence does not prove a chain reorganization.</p><form id="compare-form" class="inline-form"><div><label for="compare-before">Before</label><select id="compare-before" disabled></select></div><div><label for="compare-after">After</label><select id="compare-after" disabled></select></div><button id="compare-submit" type="submit" disabled>Compare evidence</button></form><div id="compare-result" role="status">Two captures are needed for a comparison.</div></section>
+    <section class="operations" aria-labelledby="operations-heading"><h2 id="operations-heading">Workspace operations</h2><div class="operation-columns">
+      <details><summary>Import snapshot JSON</summary><p class="muted">Import a schema-v1 evidence snapshot, not an exported ledger. Existing evidence is preserved.</p><form id="import-form"><fieldset id="import-fields" disabled><label for="import-file">Snapshot JSON (up to 16 MiB)</label><input id="import-file" type="file" accept=".json,application/json" required><label for="import-label">Capture label (optional)</label><input id="import-label" maxlength="256"><button id="import-submit" type="submit" class="primary">Import snapshot</button></fieldset><p id="import-feedback" role="status" class="feedback"></p></form></details>
+      <details><summary>Capture from configured RPC</summary><p class="muted" id="rpc-help">Read-only RPC requests run locally in the background. The endpoint is configured on the server, never in this page.</p><form id="job-form"><fieldset id="job-fields" disabled><label for="job-limit">Signature limit (1–10000)</label><input id="job-limit" type="number" value="100" min="1" max="10000" required><label class="check"><input id="include-tokens" type="checkbox"> Include current token-account discovery</label><p class="muted">Current token accounts cannot reveal all closed or historical accounts.</p><button id="job-submit" type="submit" class="primary">Start capture</button></fieldset><p id="job-feedback" role="status" class="feedback"></p></form></details>
+    </div><div class="section-title jobs-title"><h3>Background jobs</h3><button id="refresh-jobs">Refresh jobs</button></div><p id="jobs-status" class="muted">No jobs loaded.</p><ol id="job-list" class="job-list"></ol></section>
+    <footer class="main-footer">Solana Flow · Local, read-only chain investigation. Balance deltas can include fees, rent and multiple instructions. No USD pricing or transfer classification.</footer>
+  </main>
+</div>
+<noscript><p class="notice">JavaScript is required for the investigation workbench. Use the command-line analyzer for an offline HTML report.</p></noscript>
+</body>
+</html>

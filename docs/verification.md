@@ -1,75 +1,71 @@
-# Release verification
+# v2.0 release verification
 
-## Local release gate
+These are observed checks, not a claim that passing tests prove complete Solana history or exhaustive security. The previous v1 gate is archived in `.planning/milestones/v1.0/VERIFICATION.md` and the v1 release history.
 
-Actual checks run on Python 3.14.7 against the release implementation:
+## Local evidence
 
 | Check | Observed result |
 | --- | --- |
-| unittest suite | **45 passed, zero skips**, including real local HTTP rate-limit and redirect integration tests |
-| Coverage | coverage.py line-and-branch report **99%**, threshold 90%; ledger/CLI/report/strict JSON modules at 100% |
-| Ruff | Lint and formatting passed |
-| Report controls | Ten Node assertions plus real Chromium search/asset/direction/status/combined-empty tests |
-| Browser exports | CSV download byte-matched the generated file |
-| Browser privacy | Zero HTTP requests from the offline report; zero runtime errors |
-| Desktop and mobile | 1440px and 390px, zero axe violations, zero document overflow |
-| Lighthouse | Performance 100, accessibility 100, best practices 100, SEO 91; localhost synthetic report |
+| Python suite | **120 passed, zero skips** on Python 3.14.7, including real SQLite, HTTP/RPC, background-job and CLI regressions |
+| Coverage | **96% branch-inclusive coverage.py**, 90% threshold; ledger/report/strict JSON/sample modules 100% |
+| Lint | Ruff lint and formatting pass |
+| Node logic | **18 tests passed**, plus the legacy report's ten control assertions |
+| Supplemental Chromium harness | **22 passed**: the same 18 tests plus four DOM/network-body tests using explicitly mocked API routes |
+| Actual application E2E | **5 passed**: real local API/SQLite workflows, browser exact-integer import/duplicate-key rejection, asynchronous local-RPC fixture job, static explorer and mobile accessibility |
+| Desktop/mobile smoke | 1440×1000 and 390×844: zero axe violations, no document overflow, no console/page errors |
+| Lighthouse local application | Performance **81**, accessibility **100**, best practices **100**, SEO **100**; mobile-throttled initial-load performance is reduced by layout shifts (CLS approximately 0.39), not a claim of perfect performance |
+| Determinism | Explorer generated into two directories, all files byte-identical; legacy installed-demo HTML still matches committed `docs/demo/index.html` |
 | Packaging | Wheel and source distribution built; wheel built from sdist |
-| Fresh wheel install | No-index/no-deps install, isolated module invocation and console command succeeded; demo and replay byte-matched |
-| Live devnet | Installed release CLI fetched eight transactions and produced 16 ledger rows; zero unavailable records or analysis gaps |
-| Live reconciliation | All eight SOL rows and wallet-paid fees independently compared with fresh public RPC responses; captured token amounts and owners matched original balance evidence |
-| Review regressions | Duplicate RPC JSON keys/nonfinite numbers, malformed URL diagnostics, extension/log/error redaction, versioned keys and uncertainty preservation covered |
+| Clean installed-wheel smoke | Python 3.12 isolated environment, no runtime dependency install: demo/replay, import/query/compare, actual `serve`, packaged HTML/JS/CSS, and seeded SQLite API passed |
+| Live devnet | Installed v2 CLI used both token programs, discovered six current token accounts, captured three unique transactions with zero unavailable records |
+| Independent live reconciliation | Fresh public RPC reads matched all three emitted ledger rows and captured token ownership/base-unit evidence; zero analysis gaps |
 
-The live probe used a public devnet fee-payer address discovered from System Program activity, not an operator wallet. One observed transaction was [4b75DxQyCnMTihECTkogs5N6kGEa8hCQG7tTHUn7nNFLbhTZqiiwV7FeLneimTbi7i6kRmxCDCvWZPS2ywGmJ7Du](https://explorer.solana.com/tx/4b75DxQyCnMTihECTkogs5N6kGEa8hCQG7tTHUn7nNFLbhTZqiiwV7FeLneimTbi7i6kRmxCDCvWZPS2ywGmJ7Du?cluster=devnet). Devnet providers may later prune the record.
+The live probe queried the public Vote program address, not an operator wallet. It reached the explicit three-signature cap. Token-enabled coverage was **partial by design** because current-account discovery cannot establish complete wallet history. No live activity is used in the public synthetic explorer. The verification capture stayed in ignored local QA state.
 
-Coverage was capped at eight signatures and uses wallet-account-keys-only discovery. Successful capture does **not** mean complete wallet history. The public report remains a conspicuously **SYNTHETIC** offline example, never those live transactions.
+## Failure-first regressions
 
-Hosted verification **passed on Python 3.11, 3.12, 3.13 and 3.14** for implementation commit `558a0e34542c561590bcb10809c22aace4bf6ead`: [verified run](https://github.com/gedanut/solana-flow/actions/runs/38586616972). Every matrix job passed lint, branch coverage, build, wheel-install smoke and artifact upload. Consult [workflow history](https://github.com/gedanut/solana-flow/actions/workflows/ci.yml) for later commits. Mainnet RPC availability was not established by the release gate.
+- The browser originally rounded a one-lamport change above the safe integer range to zero. The actual browser-to-server E2E test failed, then passed after sending original JSON text unchanged. Duplicate keys now reach strict server validation instead of being silently discarded by client parse/serialization.
+- Browser response decoding preserves unsafe integer lexemes before evidence display. Supplemental Chromium tests include a slot of `9007199254740993` and native balances `18446744073709551615` / `18446744073709551614`.
+- The static search adapter originally matched across concatenated field boundaries. A failing regression established the mismatch with SQL search; it now searches each identifier separately.
+- Independent backend review found malformed `meta=null` transactions could bypass shape validation and cause an import traceback/disconnected HTTP response. Failing Workspace, subprocess CLI and actual HTTP regressions reproduced it. Validation now checks account-key structure before recording a missing-metadata gap; valid unknown metadata remains a visible gap.
+- Parent review reproduced cross-cluster aggregation and non-ASCII mutation-token request failures. Regression tests now require cluster separation and controlled HTTP 403 responses.
+- Job tests cover queue saturation under concurrent submission, exclusive workspace-runner ownership, nonwaiting shutdown, sanitized provider exceptions and storage-transition failures. No claim of exactly-once execution is made.
 
 ## Reproduce
 
 ```sh
-python -m pip install . ruff coverage build
+python -m pip install -e . 'ruff>=0.11,<1' 'coverage>=7,<8' 'build>=1,<2'
 SOLANA_FLOW_REQUIRE_LOCAL_HTTP=1 coverage run -m unittest discover -s tests -v
 coverage report
 ruff check .
 ruff format --check .
-node scripts/test_report_controls.cjs
+npm ci
+npm test
+python scripts/generate_explorer.py --output .explorer-check
+diff -qr docs/explorer .explorer-check
+npx playwright install chromium
+npm run test:e2e
+WORKBENCH_BROWSER_TESTS=1 node scripts/test_workbench.cjs
 python -m build
-python -m venv .release-venv
-.release-venv/bin/python -m pip install --no-index --no-deps dist/*.whl
-.release-venv/bin/python -I -m solana_flow demo --output .release-demo
-.release-venv/bin/solana-flow analyze .release-demo/snapshot.json --output .release-replay
-cmp .release-demo/ledger.json .release-replay/ledger.json
 ```
 
-Use equivalent Scripts paths on Windows. Build tools must already be available for offline builds. A Python 3.12+ stdlib executable-line fallback is available as `python scripts/check_coverage.py`; it is not a replacement for the branch-inclusive CI gate.
+Set `E2E_PYTHON=/path/to/python` for a specific interpreter. E2E starts disposable loopback services on ports 8878/8879 and uses an explicitly local JSON-RPC fixture. It verifies the complete application path without treating a fixture as live network evidence. The separate live devnet probe is described above.
 
-## Live probe
+After installing the built wheel into a fresh environment without dependencies, run its interpreter with `-I scripts/smoke_installed.py`. The reported module path must be that environment's `site-packages`, not this checkout. Use equivalent executable paths for your OS.
 
-```sh
-solana-flow fetch A5axoZYmALC4RztcJhxaNTQNHL3ejy2BYVQPewYAEmfJ \
-  --rpc-url https://api.devnet.solana.com --cluster devnet \
-  --limit 8 --output devnet-snapshot.json
-solana-flow analyze devnet-snapshot.json --output devnet-report
-```
+## Architecture and operational limits
 
-This public devnet address can change activity or cease to be useful; the command is a probe, not a guaranteed fixture. Check exit status, coverage and warnings. Exit 2 preserves partial output. Never publish private wallet snapshots as verification material.
+- Providers remain untrusted. Neither normalized captures nor comparison results are cryptographic proof or payment classifications.
+- Current token accounts omit closed/transferred accounts and can omit prior ownership history. Source traversal is deterministic and bounded, not a globally newest merged history index.
+- Jobs have bounded per-request transport retries/timeouts, not a total deadline or force-cancel of a running thread. Interrupted jobs require explicit resubmission.
+- The service is loopback-only, single-user and unencrypted at rest. It is not suitable for public deployment. Linux was exercised locally and in the planned hosted matrix; the Windows advisory-lock branch is not locally exercised.
+- Static unknown-time daily buckets and local API unknown-time reporting are intentionally presented differently; amounts retain the same evidence semantics.
+- Cold-start layout shift remains a performance improvement opportunity. No material accessibility/overflow/runtime finding remained in the tested desktop/mobile states.
 
-For each signature independently request the original RPC result. Compare wallet account index, pre/post lamports, fee payer, owned token mint/index/owner/base units/decimals, status and time. Provider responses remain untrusted and are not cryptographic proof.
+## Publication and CI
 
-## Browser inspection
+The workflow has read-only contents permission, immutable action pins and no untrusted event values interpolated into commands. Matrix checks cover Python 3.11–3.14, branch coverage, Node logic, deterministic explorer generation, build, and clean installed-wheel smoke. A separate Chromium job runs the real application E2E suite. Exact public head status must be checked after pushing; local checks do not establish hosted CI success.
 
-Open `docs/demo/index.html` directly. Confirm the synthetic label, four asset summaries, 21 rows and one failed transaction. Filters affect the table only. Test combined filters and empty state. The ledger scrolls horizontally inside its own region on mobile. CSV is embedded and works from a standalone HTML; JSON is a sibling file, so share the report directory when that download matters.
+Publication is pending this release gate. The final commit/tag and observed hosted run are recorded below once verified.
 
-The [README screenshot](images/report.png) is captured from the generated report, not an illustration. Assets and report code are bundled locally, with a restrictive hashed CSP and no analytics or external resources.
-
-## CI provenance
-
-CI has `contents: read`, does not persist checkout credentials and builds/tests each supported Python interpreter. Immutable action pins were independently verified via the unauthenticated GitHub tag-reference API:
-
-- [checkout v4.2.2](https://github.com/actions/checkout/commit/11bd71901bbe5b1630ceea73d27597364c9af683)
-- [setup-python v5.6.0](https://github.com/actions/setup-python/commit/a26af69be951a213d495a4c3e4e4022e16d87065)
-- [upload-artifact v4.6.2](https://github.com/actions/upload-artifact/commit/ea165f8d65b6e75b540449e92b4886f43607fa02)
-
-`docs/demo/` is regenerated by the packaged tool. CI compares it against an isolated wheel-installed demo and uploads distributions plus generated report artifacts.
+The README image is an actual seeded-application screenshot. Its provenance is in `images/workbench.png.json`; the public explorer is visibly synthetic and read-only.

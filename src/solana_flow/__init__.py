@@ -3,4 +3,4 @@
 from .ledger import ValidationError, analyze, decimal_amount
 
 __all__ = ["ValidationError", "analyze", "decimal_amount"]
-__version__ = "1.0.0"
+__version__ = "2.0.0"
