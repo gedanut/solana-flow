@@ -1,10 +1,13 @@
-# Requirements
+# v2.0 Requirements
 
-- LEDGER-01: Exact SOL and SPL net movements, per-side ownership, null time, failed fees, raw/parsed versioned keys; strict malformed-data rejection.
-- LEDGER-02: Deterministic packaged synthetic demo, library, CLI, JSON and CSV.
-- RPC-01: Bounded read-only pagination/retry/capture with safe diagnostics and explicit coverage.
-- RPC-02: Replay rejects conflicts and surfaces missing records and unknown owners.
-- REPORT-01: Accessible responsive offline report with per-asset totals/charts, filters, CSV and safe explorer links.
-- RELEASE-01: Tests, lint, coverage, installed-wheel verification, pinned CI, docs and generated static demo.
+- STORE-01: Atomic validated SQLite import, persistent multi-wallet identity, immutable idempotent captures, exact TEXT amounts and schema migration guard.
+- QUERY-01: Safe paginated movement filtering, latest-capture-per-wallet defaults to avoid overlap double counts, exact asset and UTC daily analytics.
+- DIFF-01: Same-wallet capture comparison: added/removed/changed signatures and exact net deltas, never PnL.
+- DISC-01: Current classic SPL and Token-2022 account discovery, globally bounded deduplicated references, explicit source coverage and remaining limitations.
+- JOB-01: Durable queued/running/succeeded/partial/failed jobs; one bounded worker; interruption recovery; endpoint URLs never persisted.
+- API-01: Loopback-only stdlib HTTP API, strict bounded JSON, safe errors, same-origin mutation protection, no arbitrary files/CORS.
+- UI-01: Real wallet/capture navigation, search/filter/pagination, evidence inspector, import/capture/compare/export; loading/empty/error/mobile/accessibility states.
+- DEMO-01: Public static explorer runs same frontend with generated synthetic model, visibly read-only synthetic, no pretend live actions.
+- RELEASE-02: Regression tests, independent review, built-wheel clean installation, browser E2E, exact-head hosted Python matrix, verified public release and Pages.
 
-Mapping: LEDGER requirements → phase 1; RPC → phase 2; REPORT and RELEASE → phase 3.
+Traceability: phase4 STORE/QUERY/DIFF; phase5 DISC; phase6 JOB/API/UI; phase7 DEMO/RELEASE. All choices auto-approved by user's full delegation.
