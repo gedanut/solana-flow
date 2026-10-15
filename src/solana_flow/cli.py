@@ -40,7 +40,7 @@ def _parser():
             "Read-only Solana net balance analytics. No signing, prices or payment classification."
         ),
     )
-    parser.add_argument("--version", action="version", version="solana-flow 2.0.0")
+    parser.add_argument("--version", action="version", version="solana-flow 2.0.1")
     sub = parser.add_subparsers(dest="command", required=True)
     demo = sub.add_parser("demo", help="Generate an offline SYNTHETIC demonstration")
     demo.add_argument("--output", type=Path, required=True, help="Report directory")

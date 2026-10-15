@@ -23,7 +23,7 @@ class WorkbenchCLITests(unittest.TestCase):
     def test_version_identifies_second_release(self):
         result = self.run_cli("--version")
         self.assertEqual(result.returncode, 0)
-        self.assertEqual(result.stdout.strip(), "solana-flow 2.0.0")
+        self.assertEqual(result.stdout.strip(), "solana-flow 2.0.1")
 
     def test_fetch_can_opt_into_current_token_account_discovery(self):
         from unittest.mock import patch

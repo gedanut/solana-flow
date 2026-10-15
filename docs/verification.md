@@ -68,6 +68,10 @@ The verification workflow has read-only contents permission, immutable action pi
 
 Implementation commit `06470ccb2acbe363a39de88c1ef4762ab8d27c99` passed all four Python checks and Chromium in [hosted run 38662960407](https://github.com/gedanut/solana-flow/actions/runs/38662960407). Independent backend fix review confirmed all six malformed message/account-key variants fail safely through Workspace, CLI and HTTP, while legitimate missing metadata remains a partial capture.
 
-Finish review requested top-level operation entries and visible mobile inspector feedback. Both were reproduced as failing browser assertions, then fixed; the five-test E2E suite and all supplemental tests passed again. Updated desktop/mobile captures have zero axe/overflow/console findings. Exact-head CI for those finish fixes and final publication remain the next gate.
+Finish review requested top-level operation entries and visible mobile inspector feedback. Both were reproduced as failing browser assertions, then fixed; the five-test E2E suite and all supplemental tests passed again. Updated desktop/mobile captures have zero axe/overflow/console findings. Both finish fixes received independent SHIP approval, including fresh browser checks at390/1180/1181/1440px and an independent five-test E2E pass.
+
+v2.0.0 at `f9b403bd5a6c209f9d86c1fa8686c4b5d59a89d4` passed [main CI](https://github.com/gedanut/solana-flow/actions/runs/38664259225), [Pages](https://github.com/gedanut/solana-flow/actions/runs/38664259375), and [release gate](https://github.com/gedanut/solana-flow/actions/runs/38664259873). All three release assets were downloaded, their checksum/digest/size verified, and the public wheel independently installed and exercised in a clean environment. All four hosted explorer files matched source bytes.
+
+Production browser verification then exposed comparison JSON overflow after a desktop-to-mobile resize. The static E2E assertion failed, then passed after comparison evidence adopted the existing wrapped-code rule. All five E2E,120 Python and22 supplemental tests pass again. v2.0.1 carries that bounded fix and flat checksum filenames; its publication checks are pending below.
 
 The README image is an actual seeded-application screenshot. Its provenance is in `images/workbench.png.json`; the public explorer is visibly synthetic and read-only.

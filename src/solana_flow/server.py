@@ -143,7 +143,7 @@ def create_server(workspace, *, port=0, host="127.0.0.1", runner=None):
                     {
                         "token": token,
                         "mode": "local",
-                        "version": "2.0.0",
+                        "version": "2.0.1",
                         "capture_enabled": runner is not None and runner.enabled,
                     }
                 )

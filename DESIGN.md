@@ -180,7 +180,7 @@ Amber text and pale amber background identify scoped, synthetic or partial evide
 
 Body text is system sans (14px, line-height 1.55). The main heading is 26px, 700 weight, line-height 1.2 and negative tracking; the topbar heading becomes 24px at the mobile breakpoint. Section headings are 18px; generic subheadings are 15px, with inspector headings at 14px. Labels are 12px/650. The brand uses 22px/750, becoming 20px on mobile.
 
-Ledger and asset tables use 12px text with 11px headers. Amounts are right-aligned, non-wrapping monospace with tabular numerals. Signature buttons use 11px monospace and a maximum visible width of 245px with ellipsis; full identifiers remain available in the inspector. Mints and timestamps use 10px text; mints wrap anywhere. Evidence JSON is 10px monospace with line-height 1.65, pre-wrapping and anywhere wrapping. Body numerals are tabular by default.
+Ledger and asset tables use 12px text with 11px headers. Amounts are right-aligned, non-wrapping monospace with tabular numerals. Signature buttons use 11px monospace and a maximum visible width of 245px with ellipsis; full identifiers remain available in the inspector. Mints and timestamps use 10px text; mints wrap anywhere. Evidence inspector JSON is 10px monospace with line-height 1.65, pre-wrapping and anywhere wrapping. Expanded comparison JSON shares the coverage evidence style: 11px pre-wrapped code with anywhere wrapping, surface background and 12px padding. Body numerals are tabular by default.
 
 ## Layout
 

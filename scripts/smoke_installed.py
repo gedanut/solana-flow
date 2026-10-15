@@ -31,7 +31,7 @@ def command(*args, expected=0):
 
 
 def main():
-    assert solana_flow.__version__ == "2.0.0", solana_flow.__version__
+    assert solana_flow.__version__ == "2.0.1", solana_flow.__version__
     with tempfile.TemporaryDirectory(prefix="solana-flow-wheel-") as directory:
         root = Path(directory)
         command("demo", "--output", root / "demo")

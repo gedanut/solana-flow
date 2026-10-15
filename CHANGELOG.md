@@ -1,5 +1,10 @@
 # Release notes
 
+## 2.0.1 · Mobile comparison patch
+
+- Wrap the exact comparison JSON using the existing evidence code style. The production browser smoke exposed horizontal overflow after comparing at desktop size and then switching to mobile; a failing-first static-browser regression now covers that state.
+- Publish flat checksum filenames so downloaded assets can be verified together with `sha256sum -c SHA256SUMS.txt`.
+
 ## 2.0.0 · Investigation Workbench
 
 The project expands from a snapshot/report CLI into a persistent operational application while retaining the v1 analyzer and report commands.

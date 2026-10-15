@@ -8,7 +8,7 @@ Python 3.11+ · zero runtime dependencies · SQLite + HTTP API + browser applica
 
 ![Actual workbench rendering with synthetic evidence](docs/images/workbench.png)
 
-**[Explore the read-only synthetic workspace](https://gedanut.github.io/solana-flow/explorer/)** · [Portable report demo](https://gedanut.github.io/solana-flow/demo/) · [Architecture](docs/architecture.md) · [Verification](docs/verification.md)
+**[Explore the read-only synthetic workspace](https://gedanut.github.io/solana-flow/explorer/)** · [Release downloads](https://github.com/gedanut/solana-flow/releases/latest) · [Portable report demo](https://gedanut.github.io/solana-flow/demo/) · [Architecture](docs/architecture.md) · [Verification](docs/verification.md)
 
 ## Start a workspace
 

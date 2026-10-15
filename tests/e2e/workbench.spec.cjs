@@ -120,6 +120,10 @@ test('public static adapter has working evidence and no pretend write actions', 
   await expect(page.locator('#row-count')).toHaveText('2 matching movements');
   await page.locator('#ledger-rows button').first().click();
   await expect(page.locator('#evidence-json')).toContainText('preBalances');
+  await page.setViewportSize({width:390, height:844});
+  await page.locator('#ledger-rows button').first().click();
+  await expect(page.locator('#inspector-heading')).toBeInViewport();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(errors).toEqual([]);
 });
 
