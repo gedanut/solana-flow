@@ -72,6 +72,16 @@ Finish review requested top-level operation entries and visible mobile inspector
 
 v2.0.0 at `f9b403bd5a6c209f9d86c1fa8686c4b5d59a89d4` passed [main CI](https://github.com/gedanut/solana-flow/actions/runs/38664259225), [Pages](https://github.com/gedanut/solana-flow/actions/runs/38664259375), and [release gate](https://github.com/gedanut/solana-flow/actions/runs/38664259873). All three release assets were downloaded, their checksum/digest/size verified, and the public wheel independently installed and exercised in a clean environment. All four hosted explorer files matched source bytes.
 
-Production browser verification then exposed comparison JSON overflow after a desktop-to-mobile resize. The static E2E assertion failed, then passed after comparison evidence adopted the existing wrapped-code rule. All five E2E,120 Python and22 supplemental tests pass again. v2.0.1 carries that bounded fix and flat checksum filenames; its publication checks are pending below.
+Production browser verification then exposed comparison JSON overflow after a desktop-to-mobile resize. The static E2E assertion failed, then passed after comparison evidence adopted the existing wrapped-code rule. All five E2E,120 Python and22 supplemental tests pass again. v2.0.1 carries that bounded fix and flat checksum filenames.
+
+### Final published artifact: v2.0.1
+
+- [Release and downloads](https://github.com/gedanut/solana-flow/releases/tag/v2.0.1), annotated source tag at `dd8441eaa6100aaa06c95a805baf019a3a738a4f`.
+- [Exact-head CI38665325714](https://github.com/gedanut/solana-flow/actions/runs/38665325714), [Pages38665326065](https://github.com/gedanut/solana-flow/actions/runs/38665326065), and [full reused verification plus release publication38665403418](https://github.com/gedanut/solana-flow/actions/runs/38665403418): all succeeded.
+- Read back the actual public Release, tag target and three assets. Downloaded wheel/source archive/checksum manifest; verified API sizes/digests, manifest hashes and native `sha256sum -c SHA256SUMS.txt`: both distributions OK. The wheel digest is `e31497f5b45c7c3083595e1fff5232c070e4b04b1fb40b9e908e4bec59a9281c`; the source archive digest is `020984c17ff62d31a2c143ebe6b29b218cf10a0cc9cb0609c514fbc7dd26cf61`.
+- Installed the **downloaded public wheel** without index/dependencies into a fresh Python3.12 environment. Isolated installed-module smoke passed demo/replay, import/query/compare, real serve, packaged HTML/JS/CSS and seeded SQLite API. This is distinct from testing an editable checkout or locally built artifact.
+- All four served explorer files matched committed source bytes. Actual public browser smoke passed root redirect, two synthetic wallets, disabled mutation controls, source inspection, comparison, asset filtering and mobile inspector reveal. Expanded comparison state now keeps document width390 at viewport390, with zero page errors.
+
+Documentation-only closure commits can follow the immutable release source tag; they do not silently alter its artifacts. The final documentation head is also checked in hosted CI before the completion announcement.
 
 The README image is an actual seeded-application screenshot. Its provenance is in `images/workbench.png.json`; the public explorer is visibly synthetic and read-only.

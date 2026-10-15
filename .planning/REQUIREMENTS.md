@@ -11,3 +11,5 @@
 - RELEASE-02: Regression tests, independent review, built-wheel clean installation, browser E2E, exact-head hosted Python matrix, verified public release and Pages.
 
 Traceability: phase4 STORE/QUERY/DIFF; phase5 DISC; phase6 JOB/API/UI; phase7 DEMO/RELEASE. All choices auto-approved by user's full delegation.
+
+All requirements accepted for the v2.0 milestone. The released artifact is v2.0.1; exact tag/CI/Pages/release and downloaded-install evidence is recorded in phases/07-release/VERIFICATION.md. Public explorer limitations and local-only mutation scope remain explicit acceptance conditions, not missing hosted services.
