@@ -2,8 +2,10 @@ name: Verify Solana Flow
 
 on:
   push:
+    branches: ['**']
   pull_request:
   workflow_dispatch:
+  workflow_call:
 
 # Run commands use only repository-controlled values, never event/user text.
 permissions:

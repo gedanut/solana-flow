@@ -64,7 +64,7 @@ After installing the built wheel into a fresh environment without dependencies, 
 
 ## Publication and CI
 
-The workflow has read-only contents permission, immutable action pins and no untrusted event values interpolated into commands. Matrix checks cover Python 3.11–3.14, branch coverage, Node logic, deterministic explorer generation, build, and clean installed-wheel smoke. A separate Chromium job runs the real application E2E suite. Exact public head status must be checked after pushing; local checks do not establish hosted CI success.
+The verification workflow has read-only contents permission, immutable action pins and no untrusted event values interpolated into commands. A tag-triggered release workflow calls that same complete gate before its separate publishing job receives contents-write permission via GitHub’s short-lived repository token. Package version must exactly match the strictly validated tag; downloads include wheel, source distribution and SHA256SUMS. No personal token is configured or required. Matrix checks cover Python 3.11–3.14, branch coverage, Node logic, deterministic explorer generation, build, and clean installed-wheel smoke. A separate Chromium job runs the real application E2E suite. Exact public head status must be checked after pushing; local checks do not establish hosted CI success.
 
 Implementation commit `06470ccb2acbe363a39de88c1ef4762ab8d27c99` passed all four Python checks and Chromium in [hosted run 38662960407](https://github.com/gedanut/solana-flow/actions/runs/38662960407). Independent backend fix review confirmed all six malformed message/account-key variants fail safely through Workspace, CLI and HTTP, while legitimate missing metadata remains a partial capture.
 
