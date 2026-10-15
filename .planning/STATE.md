@@ -3,29 +3,29 @@ gsd_state_version: '1.0'
 milestone: v2.0
 milestone_name: Investigation Workbench
 status: executing
-current_phase: 6
+current_phase: 7
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 4
-  completed_plans: 2
-  percent: 50
+  completed_plans: 3
+  percent: 75
 ---
 # Project State
 
 ## Current Position
-Phase: 6 of 7 (Operational workbench)
+Phase: 7 of 7 (Public proof and release)
 Plan: 1 of 1
 Status: In progress
 
 ## Decisions and evidence
 Explicit autonomous delegation covers product/design/implementation/publication with gedanut separation. Prior v1 plans archived. Manually adapted GSD phase execution, not a claim that all native workflow gates ran. Native smart-entry is checked against actual artifacts.
 
-Storage/discovery phases accepted. API/security tests and real HTTP->worker->RPC->SQLite passive token receipt pass; current Python suite exceeds 112 tests. Jobs exclusive OS lock and safe transition failures landed before interruption. Read docs/jobs.md.
+Storage/discovery/workbench phases accepted.120 Python tests,96% branch coverage;18 logic plus4 supplemental browser tests;5 real API/SQLite browser E2E flows. Precision/duplicate-key boundaries, malformed missing-meta import, mixed-network aggregation and non-ASCII mutation requests all have passing regressions. Independent backend review and six-variant fix verification passed. Actual live devnet bounded3-reference capture and fresh independent RPC reconciliation passed. Wheel/sdist and isolated wheel-installed real service/commands/resources pass.
 
-Browser E2E added with pinned Playwright/axe development deps. Actual Chromium first flow and mobile axe passed; precision import reproducer failed (1 lamport rounded to zero) and is assigned frontend worker. Static disabled-fieldset matcher corrected to test real submit buttons. Re-run full browser suite after frontend fix and regenerate explorer. Independent backend review pending async completion.
+Implementation commit06470ccb2acbe363a39de88c1ef4762ab8d27c99 publicly pushed; hosted CI38662960407 passed all4 Python matrix jobs and Chromium. Finish reviewer requested top-level operation entries and visible mobile inspector; failing-first browser assertions added, fixes landed, all5 E2E and22 supplemental tests pass. Desktop/mobile axe0/nooverflow/noerrors; Lighthouse83/100/100/100, cold CLS~0.345 remains an explicit performance limit. Official DESIGN.md lint0errors/0warnings;46 DTCG tokens, source-hashed design sidecar.
 
 ## Resume
-Branch feat/investigation-workbench. Main still v1. No v2 published. Parent test service at127.0.0.1:8876 may still run old loaded Python code, packaged assets read dynamically. Playwright starts disposable servers8878/8879 itself. Use .venv/bin/python (host python not installed project). Run E2E_PYTHON=.venv/bin/python npx playwright test. Do not commit DB/WAL/lock/private capture files.
+Branch feat/investigation-workbench; main still v1. Finish fixes require a fresh exact-head hosted CI run and bounded independent confirmation (background review). Then fast-forward main, publish v2.0.0 source tag, verify exact public SHA and Pages assets. No PR or hosted GitHub Release record has been created: dedicated SSH is available, authenticated desktop UI is not. Do not use a different account to work around that boundary. No public deployment of the writable local server.
 
-Pending: frontend precision/static fixes, review findings, final E2E/visual/Lighthouse, fresh-wheel/real devnet smoke, CI changes, docs screenshot, GSD final acceptance, dedicated SSH push and exact-head GitHub CI/Pages verification. UI publishing may be unavailable if desktop chat not open; do not switch to personal-account connector.
+Parent QA server127.0.0.1:8876 may still run old Python code; packaged assets load dynamically. E2E and installed smoke start separate fresh servers. Run with .venv/bin/python. Do not commit DB/WAL/lock/private capture files. Keep hosted vs local verification and synthetic vs live evidence distinct.

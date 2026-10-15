@@ -22,6 +22,15 @@ test.describe.serial('local evidence workflow', () => {
     const errors = []; page.on('pageerror', error => errors.push(error.message));
     await page.goto('/'); await loaded(page);
     await expect(page.locator('#wallet-list button')).toHaveCount(2);
+    await expect(page.locator('#open-import')).toBeInViewport();
+    await expect(page.locator('#open-capture')).toBeInViewport();
+    await page.locator('#open-import').click();
+    await expect(page.locator('#import-file')).toBeVisible();
+    await expect(page.locator('#import-file')).toBeFocused();
+    await page.locator('#open-capture').click();
+    await expect(page.locator('#job-limit')).toBeVisible();
+    await expect(page.locator('#job-limit')).toBeFocused();
+    await page.evaluate(() => scrollTo(0, 0));
     await expect(page.locator('#provenance')).toContainText('SYNTHETIC EVIDENCE');
     await expect(page.locator('#row-count')).toHaveText('16 matching movements');
     await page.locator('#ledger-rows button').first().click();
@@ -120,6 +129,9 @@ test('mobile workspace is accessible and fits viewport', async ({page}) => {
   await page.locator('#rail-toggle').click();
   await expect(page.locator('#wallet-list button').first()).toBeVisible();
   await page.locator('#wallet-list button').nth(1).click(); await loaded(page);
+  await page.locator('#ledger-rows button').first().click();
+  await expect(page.locator('#inspector-heading')).toBeInViewport();
+  await expect(page.locator('#evidence-json')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
 });

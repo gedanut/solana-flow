@@ -294,7 +294,7 @@
           for (const sibling of $('ledger-rows').children) sibling.classList.remove('selected'); row.classList.add('selected');
           $('movement-detail').replaceChildren(); $('inspector-help').textContent = 'Source evidence for the selected movement. Amounts below remain exact text.';
           for (const [label, value] of [['Signature', movement.signature], ['Asset / mint', movement.mint || movement.asset], ['Net base units', movement.amount_base_units], ['Decimals', movement.decimals], ['Status', movement.status], ['Slot', movement.slot], ['Wallet-paid fee · base units', movement.wallet_paid_fee_base_units]]) detail($('movement-detail'), label, value, true);
-          $('evidence-json').textContent = JSON.stringify(evidenceFor(state.capture, movement), null, 2); $('evidence-json').hidden = false; $('inspector-heading').focus({preventScroll: true});
+          $('evidence-json').textContent = JSON.stringify(evidenceFor(state.capture, movement), null, 2); $('evidence-json').hidden = false; $('inspector-heading').focus({preventScroll: !root.matchMedia('(max-width: 1180px)').matches});
         }); first.append(inspect); row.append(first);
         const asset = el('td'); asset.append(el('span', movement.asset, 'asset-name')); if (movement.mint) asset.append(el('span', movement.mint, 'mint')); row.append(asset);
         row.append(el('td', movement.decimal_amount ?? formatUnits(movement.amount_base_units, movement.decimals), 'numeric amount ' + (movement.direction === 'in' ? 'inflow' : movement.direction === 'out' ? 'outflow' : '')));
@@ -374,6 +374,14 @@
   $('export-csv').addEventListener('click', () => exportCapture('csv')); $('export-json').addEventListener('click', () => exportCapture('json'));
   $('compare-form').addEventListener('submit', event => { event.preventDefault(); compare(); });
   $('rail-toggle').addEventListener('click', () => { const open = $('wallet-panel').classList.toggle('open'); $('rail-toggle').setAttribute('aria-expanded', String(open)); $('rail-toggle').textContent = open ? 'Hide wallets' : 'Show wallets'; });
+  function openOperation(formId, inputId) {
+    const form = $(formId), panel = form.closest('details'), input = $(inputId);
+    panel.open = true;
+    const target = input.disabled || input.closest('fieldset').disabled ? panel.querySelector('summary') : input;
+    target.focus();
+  }
+  $('open-import').addEventListener('click', () => openOperation('import-form', 'import-file'));
+  $('open-capture').addEventListener('click', () => openOperation('job-form', 'job-limit'));
   $('wallet-form').addEventListener('submit', event => {
     event.preventDefault(); submit(event.currentTarget, 'wallet-feedback', async () => {
       const result = await state.api.post('wallets', {address: $('wallet-address').value.trim(), cluster: $('wallet-cluster').value, label: $('wallet-label').value});
@@ -403,7 +411,7 @@
     $('retry').hidden = true; message('Connecting to workspace…');
     try {
       state.api = await createAdapter({fetch: root.fetch.bind(root), staticMode: root.document.documentElement.dataset.mode === 'static'});
-      const local = state.api.mode === 'local'; $('mode-label').textContent = local ? 'Local workspace · read-only RPC' : 'Read-only static demonstration'; $('static-notice').hidden = local;
+      const local = state.api.mode === 'local'; $('open-import').disabled = !local; $('open-capture').disabled = !local; $('mode-label').textContent = local ? 'Local workspace · read-only RPC' : 'Read-only static demonstration'; $('static-notice').hidden = local;
       $('wallet-fields').disabled = !local; $('import-fields').disabled = !local; $('job-fields').disabled = !state.api.captureEnabled; $('refresh-jobs').disabled = !local;
       if (local && !state.api.captureEnabled) $('rpc-help').textContent = 'Live capture is disabled: no server RPC endpoint is configured. Start solana-flow serve with SOLANA_FLOW_RPC_URL set (or --rpc-url). Never paste endpoint credentials into this page.';
       await Promise.all([loadWallets(), refreshJobs()]);

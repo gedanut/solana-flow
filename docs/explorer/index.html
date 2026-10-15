@@ -35,7 +35,7 @@
     <div class="rail-footer"><p>No signing. No private keys.<br>Observed balances, not payment intent.</p><a href="https://github.com/gedanut/solana-flow">Repository</a><a href="https://github.com/gedanut/solana-flow/blob/main/docs/methodology.md">Methodology &amp; limits</a></div>
   </aside>
   <main id="main" tabindex="-1">
-    <header class="topbar"><div><h1>Investigation</h1><p id="wallet-context">Select a wallet to inspect its captures.</p></div><button id="retry" hidden>Retry connection</button></header>
+    <header class="topbar"><div><h1>Investigation</h1><p id="wallet-context">Select a wallet to inspect its captures.</p></div><div class="topbar-actions" aria-label="Workspace actions"><button id="open-import" class="primary" disabled>Import snapshot</button><button id="open-capture" disabled>Capture RPC</button><button id="retry" hidden>Retry connection</button></div></header>
     <div id="global-status" role="status" class="global-status">Loading workspace…</div>
     <section id="static-notice" class="notice" hidden><strong>Read-only demonstration</strong><p>Imports, wallet registration and live capture are disabled here. Run <code>solana-flow serve</code> locally to use your own evidence. RPC configuration stays on the server.</p></section>
     <section class="capture-bar" aria-label="Capture selection and export">

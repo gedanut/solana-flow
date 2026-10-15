@@ -13,7 +13,7 @@ These are observed checks, not a claim that passing tests prove complete Solana 
 | Supplemental Chromium harness | **22 passed**: the same 18 tests plus four DOM/network-body tests using explicitly mocked API routes |
 | Actual application E2E | **5 passed**: real local API/SQLite workflows, browser exact-integer import/duplicate-key rejection, asynchronous local-RPC fixture job, static explorer and mobile accessibility |
 | Desktop/mobile smoke | 1440×1000 and 390×844: zero axe violations, no document overflow, no console/page errors |
-| Lighthouse local application | Performance **81**, accessibility **100**, best practices **100**, SEO **100**; mobile-throttled initial-load performance is reduced by layout shifts (CLS approximately 0.39), not a claim of perfect performance |
+| Lighthouse local application | Performance **83**, accessibility **100**, best practices **100**, SEO **100**; experimental agentic-browsing category **66**; mobile-throttled initial-load performance is reduced by layout shifts (CLS approximately 0.345), not a claim of perfect performance |
 | Determinism | Explorer generated into two directories, all files byte-identical; legacy installed-demo HTML still matches committed `docs/demo/index.html` |
 | Packaging | Wheel and source distribution built; wheel built from sdist |
 | Clean installed-wheel smoke | Python 3.12 isolated environment, no runtime dependency install: demo/replay, import/query/compare, actual `serve`, packaged HTML/JS/CSS, and seeded SQLite API passed |
@@ -58,7 +58,7 @@ After installing the built wheel into a fresh environment without dependencies, 
 - Providers remain untrusted. Neither normalized captures nor comparison results are cryptographic proof or payment classifications.
 - Current token accounts omit closed/transferred accounts and can omit prior ownership history. Source traversal is deterministic and bounded, not a globally newest merged history index.
 - Jobs have bounded per-request transport retries/timeouts, not a total deadline or force-cancel of a running thread. Interrupted jobs require explicit resubmission.
-- The service is loopback-only, single-user and unencrypted at rest. It is not suitable for public deployment. Linux was exercised locally and in the planned hosted matrix; the Windows advisory-lock branch is not locally exercised.
+- The service is loopback-only, single-user and unencrypted at rest. It is not suitable for public deployment. Linux was exercised locally and in the hosted Python 3.11–3.14 matrix; the Windows advisory-lock branch is not locally exercised.
 - Static unknown-time daily buckets and local API unknown-time reporting are intentionally presented differently; amounts retain the same evidence semantics.
 - Cold-start layout shift remains a performance improvement opportunity. No material accessibility/overflow/runtime finding remained in the tested desktop/mobile states.
 
@@ -66,6 +66,8 @@ After installing the built wheel into a fresh environment without dependencies, 
 
 The workflow has read-only contents permission, immutable action pins and no untrusted event values interpolated into commands. Matrix checks cover Python 3.11–3.14, branch coverage, Node logic, deterministic explorer generation, build, and clean installed-wheel smoke. A separate Chromium job runs the real application E2E suite. Exact public head status must be checked after pushing; local checks do not establish hosted CI success.
 
-Publication is pending this release gate. The final commit/tag and observed hosted run are recorded below once verified.
+Implementation commit `06470ccb2acbe363a39de88c1ef4762ab8d27c99` passed all four Python checks and Chromium in [hosted run 38662960407](https://github.com/gedanut/solana-flow/actions/runs/38662960407). Independent backend fix review confirmed all six malformed message/account-key variants fail safely through Workspace, CLI and HTTP, while legitimate missing metadata remains a partial capture.
+
+Finish review requested top-level operation entries and visible mobile inspector feedback. Both were reproduced as failing browser assertions, then fixed; the five-test E2E suite and all supplemental tests passed again. Updated desktop/mobile captures have zero axe/overflow/console findings. Exact-head CI for those finish fixes and final publication remain the next gate.
 
 The README image is an actual seeded-application screenshot. Its provenance is in `images/workbench.png.json`; the public explorer is visibly synthetic and read-only.
